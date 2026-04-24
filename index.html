@@ -2,119 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scientific Translator | vktr</title>
-    <style>
-        :root {
-            --bg-color: #0d1117;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --container-bg: #161b22;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-            background: var(--container-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-        }
-
-        h1 { color: var(--accent-color); border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-
-        textarea {
-            width: 100%;
-            height: 150px;
-            background: #0d1117;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            color: white;
-            padding: 10px;
-            font-size: 16px;
-            resize: none;
-            box-sizing: border-box;
-        }
-
-        .output {
-            margin-top: 20px;
-            padding: 15px;
-            background: #21262d;
-            border-left: 4px solid var(--accent-color);
-            min-height: 50px;
-            white-space: pre-wrap;
-        }
-
-        button {
-            margin-top: 15px;
-            background-color: #238636;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        button:hover { background-color: #2ea043; }
-    </style>
+    <title>Средневековый Толмач</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="container">
-    <h1>Научный Формализатор</h1>
-    <p>Введите текст для трансформации в академический стиль:</p>
-    
-    <textarea id="inputBox" placeholder="Например: Я подумал и решил сделать этот проект..."></textarea>
-    
-    <button onclick="translateText()">Формализировать</button>
-
-    <h3>Результат:</h3>
-    <div id="outputBox" class="output">Здесь появится научный текст...</div>
-</div>
-
-<script>
-    // Словарь замен (можно расширять)
-    const dictionary = {
-        "я подумал": "в ходе ментальной деятельности было определено",
-        "решил сделать": "принял решение о реализации",
-        "штука": "объект исследования",
-        "быстро": "в краткосрочной перспективе",
-        "много": "значительный объем",
-        "понял": "детерминировал",
-        "сделать": "осуществить имплементацию",
-        "помогает": "способствует оптимизации",
-        "плохо": "не соответствует установленным критериям качества"
-    };
-
-    function translateText() {
-        let input = document.getElementById("inputBox").value.toLowerCase();
-        let output = input;
-
-        // Простая замена по словарю
-        for (let key in dictionary) {
-            let regex = new RegExp(key, "g");
-            output = output.replace(regex, dictionary[key]);
-        }
-
-        // Если замен не было, добавим научного пафоса в начало
-        if (output === input && input !== "") {
-            output = "На основании эмпирических данных можно констатировать, что: " + output;
-        }
-
-        document.getElementById("outputBox").innerText = output;
-    }
-</script>
-
+    <div class="container">
+        <h1>📜 Средневековый Толмач</h1>
+        <textarea id="input" placeholder="Пиши как простолюдин."></textarea>
+        <button onclick="translateText()">Переложить на слог высокий</button>
+        <div id="output" class="parchment">Здесь явится речь достойная...</div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

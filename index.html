@@ -1,53 +1,31 @@
-body {
-    background: #2c241e;
-    font-family: 'Georgia', serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
-    background: #f4e4bc;
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5), inset 0 0 50px #d4a373;
-    width: 600px;
-    text-align: center;
-    border: 2px solid #5d4037;
-}
-
-textarea {
-    width: 100%;
-    height: 100px;
-    background: transparent;
-    border: 1px solid #8d6e63;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    resize: none;
-    box-sizing: border-box;
-}
-
-.parchment {
-    min-height: 80px;
-    padding: 20px;
-    background: rgba(255,255,255,0.3);
-    border-top: 2px solid #5d4037;
-    font-style: italic;
-    font-size: 1.2em;
-    color: #3e2723;
-}
-
-button {
-    background: #5d4037;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-variant: small-caps;
-    transition: 0.3s;
-}
-
-button:hover { background: #795548; }
+const MEDIEVAL_DB = {
+    // Устойчивые выражения (приоритет при поиске)
+    phrases: {
+        "как дела": "како ваше здравие ныне?",
+        "пошли гулять": "соизволите ли вы совершить променаду?",
+        "я тебя люблю": "сердце мое преисполнено нежности к вам",
+        "хочу есть": "жажду вкусить яств изысканных",
+        "спокойной ночи": "да пребудут с вами сны благодатные",
+        "где ты": "в коих землях обретаетесь вы?",
+        "погода топ": "состояние эфира предивно и благодатно"
+    },
+    // Словарь замен
+    words: {
+        "привет": "приветствую",
+        "пока": "до востребования",
+        "деньги": "злато",
+        "друзья": "соратники",
+        "магазин": "лавка купеческая",
+        "телефон": "зеркало заморское",
+        "интернет": "паутина вселенская",
+        "машина": "самобеглая повозка",
+        "улица": "стогна града",
+        "хорошая": "лепая",
+        "плохая": "срамная",
+        "кринж": "позор великий",
+        "рил": "воистину"
+    },
+    // Случайные вставки в начало и конец для пафоса
+    openings: ["Милостивый государь, ", "Любезный друг, ", "Сударь, ", "Позвольте доложить: "],
+    closings: ["!", "...", ". Искренне ваш.", ". Dixi!"]
+};
